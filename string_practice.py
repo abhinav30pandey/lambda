@@ -601,6 +601,318 @@ for x in str1:
 print("Total:- ", total)
 
 
+'''63. Write a Python program to remove leading zeros from an IP address.'''
+ip= ("255.024.01.01")
+subs = '0'
+s=ip.replace(subs,'')
+print(s)
+
+
+'''64.............'''
+
+
+
+'''65. Write a Python program to find all the common characters from two given lower
+case strings.If there are no common letters print "No common characters"'''
+
+str1 = input('enter a string: ').lower()
+str2 = input('enter a string: ').lower()
+l = []
+for x in str1:
+	if x in str2:
+		l.append(x)
+	else:
+		print('no common characters {} & {}'.format(str1,str2))
+print(l)
+
+
+'''66..................'''
+
+
+'''67. Write a Python program to remove all consecutive duplicates of a given string.'''
+
+str1 = input('enter a string: ')
+l = []
+for x in str1:
+	l.append(x)
+	
+print('afetr removeing all duplicates of string:',set(l)) 
+
+
+'''68...............69........'''
+
+
+'''70. Write a Python program to create a string from two given strings 
+concatenating uncommon characters of the said strings'''
+
+
+s1 = input('enter a characters: ')
+s2 = input('enter a characters: ')
+set1 = set(s1)
+set2 = set(s2)
+l=[]
+common_chars = (set1 & set2)
+for x in s1:
+	if x not in common_chars:
+		l.append(x)
+for x in s2:
+	if x not in common_chars:
+		l.append(x)
+print(''.join(l))
+
+
+
+'''71. Write a Python program to move all spaces to the front of a given 
+string in single traversal.'''
+
+
+str1 = input('enter a string: ')
+str2 = str1.replace(' ','')
+print(str2)
+
+
+'''72. Write a Python code to remove all characters except a 
+specified character in a given string.
+ex:-
+Original string
+Python Exercises
+Remove all characters except P in the said string:p     '''
+
+
+str1 = input('enter a original string: ')
+substring = input('enter a specified character: ')
+l = []
+for x in str1:
+	if x == substring:
+		l.append(x)
+	else:
+		pass
+print(''.join(l))
+
+'''73. Write a Python program to count Uppercase, Lowercase, special character and
+numeric values in a given string.'''
+
+
+str1 = input('enter a string: ')
+upper_ctr, lower_ctr, number_ctr, special_ctr = 0, 0, 0, 0
+for i in range(len(str1)):
+	if str1[i] >= 'A' and str1[i] <= 'Z':
+		upper_ctr += 1
+
+	elif str1[i] >= 'a' and str1[i] <= 'z':
+		lower_ctr +=1
+
+	elif str1[i] >= '0' and str1[i] <= '9':
+		number_ctr +=1
+
+	else:
+		special_ctr +=1
+print('count of special character is',special_ctr)
+print('count of Upper character is: ',upper_ctr)
+print('count of lower character is: ',lower_ctr)
+print('count of numric value is: ',number_ctr)
+
+
+'''74...............82....'''
+
+
+'''83. Write a Python program to print four values decimal, octal,
+hexadecimal (capitalized), binary in a single line of a given integer.  '''
+
+i = int(input('enter a integer: '))
+d = str(i)
+o=str(oct(i))[2:]
+h=str(hex(i))[2:]
+b=str(bin(i))[2:]
+
+print(d,'',o,'',h,'',b)
+
+
+'''84. Write a Python program to swap cases of a given string.'''
+
+
+str1 = input('enter a string: ')
+str = ''
+for x in str1:
+	if x.isupper():
+		str +=x.lower()
+	else:
+		str +=x.upper()
+print(str)
+
+
+
+
+'''85....................'''
+
+
+
+
+'''86. Write a Python program to delete all occurrences of a specified 
+character in a given string.'''
+
+str1 = input('enter a string: ')
+char = input('enter a string: ') 
+if char in str1:
+	s=str1.replace(char,'')
+print('specified character:',s)
+
+
+'''87. Write a Python program find the common values that appear in two given strings.'''
+
+str1 = input('enter a string: ')
+str2 = input('enter a string: ')
+result = ""
+for ch in str1:
+	if ch in str2 and not ch in result:
+		result += ch
+print("Original strings:")
+print(str1)
+print(str2)
+print("\nIntersection of two said String:") 
+print(result)
+
+
+'''88. Write a Python program to check whether a given string contains a
+capital letter, a lower case letter, a number and a minimum length.
+
+Sample Output:
+Input the string: W3resource
+['Valid string.']           '''
+
+str1 = input('enter a string: ')
+if str1.isalnum() and len(str1)<8:
+	print(['Valid string.'])
+else:
+	print(['Invalid string.'])
+
+
+
+'''89. Write a Python program to remove unwanted characters from a given string.'''
+
+str1 = 'Pyth*^on Exercis^es'
+str = ''
+for x in str1:
+	if x.isalpha():
+		str +=x
+print(str)
+
+'''or.....'''
+
+str1 = input('enter a string: ')
+
+unwanted_chars = ["#", "*", "!", "^", "%"]
+
+for i in unwanted_chars:
+	str1 = str1.replace(i,'')
+print(str1)
+
+
+
+'''90. Write a Python program to remove duplicate words from a given string.'''
+
+str1 = input('enter a string: ')
+l = str1.split()
+lst = []
+for x in l:
+	if x not in lst:
+		lst.append(x)
+
+print("Original String:-")
+print(str1)
+print("\nAfter removing duplicate words from the said string:-")
+print(' '.join(lst))
+
+
+
+'''91. Write a Python program to convert a given heterogeneous
+list of scalars into a string.'''
+
+lst = ['Red', 100, -50, 'green', 'w,3,r', 12.12, False]
+for x in lst:
+	s=''.join(str(x))
+	print(s,end=',')
+
+
+
+'''92........................'''
+
+
+
+'''93. Write a Python program to extract numbers from a given string.'''
+
+str1 = input('enter a string: ')
+l=str1.split()
+l1=[]
+for num in l:
+	if num.isdigit():
+		l1.append(num)
+print(l1)
+
+
+
+'''94.............95......'''
+
+
+
+
+'''96. Write a Python program to convert a given string to camelcase.'''
+
+str1 = input('enter a string: ')
+camel_case = str1.replace(' ','')
+print(camel_case)
+
+
+
+'''97. Write a Python program to convert a given string to snake case.'''
+
+str1 = input('enter a string: ')
+snake_case = str1.replace(' ','_')
+print(snake_case)
+
+
+
+'''98. Write a Python program to decapitalize the first letter of a given string.'''
+
+str1 = input('enter a string: ')
+s = str1[0].lower()
+s1 = s + str1[1:]
+print(s1)
+
+
+
+'''99. Write a Python program to split a given multiline string into a list of lines.
+Sample Output:
+Original string: This
+is a
+multiline
+string.
+Split the said multiline string into a list of lines:
+['This', 'is a', 'multiline', 'string.', '']                          '''
+
+multiline_string = 'This\n is a\n multiline \n string'
+l=multiline_string.split('\n')
+print(l)
+
+
+
+
+'''100.......................'''
+
+
+
+
+'''101. Write a Python program to add two strings as they are numbers (Positive integer values). Return a message if the numbers are string. Go to the editor
+Sample Output:
+42
+Error in input!
+Error in input!              '''
+
+str1 = input('enter a string: ')
+for x in str1:
+	if x is not str:
+		print('Error in input!')
+		
 
 
 
